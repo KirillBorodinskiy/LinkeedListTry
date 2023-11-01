@@ -102,7 +102,7 @@ void List::copyDataFrom(const List &other) {
 }
 
 List::List(const List &other)
-:first(new Item),back(new Item),counter(0){
+        : first(new Item), back(new Item), counter(0) {
     copyDataFrom(other);
 }
 
@@ -114,5 +114,16 @@ Item *List::find(Data d) {
         temp = temp->next;
     }
     return nullptr;
+}
+
+bool List::remove(Data d) {
+    Item *temp = find(d);
+    if (temp == nullptr)
+        return false;
+    temp->prev->next = temp->next;
+    temp->next->prev = temp->prev;
+    delete temp;
+    counter--;
+    return true;
 }
 

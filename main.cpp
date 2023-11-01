@@ -17,6 +17,7 @@ int main() {
 //    list.print();
     List list2;
     list2.append(list);
+    list2.remove(4);
 //    list2.copyDataFrom(list);
     list2.print();
 //    list.clear();

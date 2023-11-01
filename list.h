@@ -11,14 +11,17 @@ class List {
     void initList();
 
     void copyDataFrom(const List &other);
-    Item* find(Data d);
+
+    Item *find(Data d);
 public:
     List();
 
     List(const List &other);
-    void append(List &other){
+
+    void append(List &other) {
         this->copyDataFrom(other);
     }
+
     void pushBack(Data d);
 
     void pushFront(Data d);
@@ -42,6 +45,7 @@ public:
     void clear();
 
     void destroy();
+    bool remove(Data d);
 };
 
 #endif // LIST_H
