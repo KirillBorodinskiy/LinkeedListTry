@@ -1,16 +1,16 @@
 #include "list.h"
 
 List::List()
-    : front(new Item()),
-    back(new Item()),
-    counter(0)
+    : first(new Item()),
+      back(new Item()),
+      counter(0)
 {
     initList();
 }
 
 void List::initList(){
-    front->next = back;
-    back->prev = front;
+    first->next = back;
+    back->prev = first;
 }
 
 void List::pushBack(Data d) {
@@ -25,16 +25,16 @@ void List::pushBack(Data d) {
 
 void List::pushFront(Data d) {
     Item *newItem = new Item(d);
-    newItem->prev = front;
-    newItem->next = front->next;
-    front->next->prev = newItem;
-    front->next = newItem;
+    newItem->prev = first;
+    newItem->next = first->next;
+    first->next->prev = newItem;
+    first->next = newItem;
     counter++;
 
 }
 
 void List::print() const {
-    Item *temp = front->next;
+    Item *temp = first->next;
     while (temp != back) {
         temp->print();
         temp = temp->next;
@@ -61,9 +61,9 @@ void List::popFront() {
         std::cout << "List is empty" << std::endl;
         return;
     }
-    Item *temp = front->next;
-    front->next = temp->next;
-    temp->next->prev = front;
+    Item *temp = first->next;
+    first->next = temp->next;
+    temp->next->prev = first;
     delete temp;
     counter--;
 

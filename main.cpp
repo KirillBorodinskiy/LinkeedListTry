@@ -11,6 +11,9 @@ int main()
     list.pushBack(3);
     list.pushFront(4);
     list.print();
+    list.popBack();
+    list.popFront();
+    list.print();
 
     return 0;
 }

@@ -4,7 +4,7 @@
 #include "item.h"
 
 class List{
-    Item *front;
+    Item *first;
     Item *back;
     unsigned int counter;
     void initList();
