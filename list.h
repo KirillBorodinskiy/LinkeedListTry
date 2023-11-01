@@ -3,24 +3,43 @@
 
 #include "item.h"
 
-class List{
+class List {
     Item *first;
     Item *back;
     unsigned int counter;
+
     void initList();
+
 public:
     List();
+
+    List(const List &other);
+
+    void copyDataFrom(const List &other);
+
     void pushBack(Data d);
+
     void pushFront(Data d);
+
     void print() const;
-    unsigned int size() const{
+
+    unsigned int size() const {
         return counter;
     }
-    bool isEmpty() const{
+
+    bool isEmpty() const {
         return !size();
     }
+
     void popBack();
+
     void popFront();
+
+    void clearOnlyData();
+
+    void clear();
+
+    void destroy();
 };
 
 #endif // LIST_H
