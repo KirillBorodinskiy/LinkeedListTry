@@ -101,7 +101,18 @@ void List::copyDataFrom(const List &other) {
     }
 }
 
-List::List(const List &other) {
+List::List(const List &other)
+:first(new Item),back(new Item),counter(0){
     copyDataFrom(other);
+}
+
+Item *List::find(Data d) {
+    Item *temp = first->next;
+    while (temp != back) {
+        if (temp->getData() == d)
+            return temp;
+        temp = temp->next;
+    }
+    return nullptr;
 }
 

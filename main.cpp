@@ -16,7 +16,8 @@ int main() {
 //    list.popFront();
 //    list.print();
     List list2;
-    list2.copyDataFrom(list);
+    list2.append(list);
+//    list2.copyDataFrom(list);
     list2.print();
 //    list.clear();
 //    list.pushBack(1);

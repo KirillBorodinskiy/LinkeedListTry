@@ -10,13 +10,15 @@ class List {
 
     void initList();
 
+    void copyDataFrom(const List &other);
+    Item* find(Data d);
 public:
     List();
 
     List(const List &other);
-
-    void copyDataFrom(const List &other);
-
+    void append(List &other){
+        this->copyDataFrom(other);
+    }
     void pushBack(Data d);
 
     void pushFront(Data d);
